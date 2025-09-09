@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Management System</title>
+    
+</head>
+<style>
+body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #004080;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .container {
+      width: 80%;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    h2 {
+      color: #004080;
+    }
+    .menu {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+.menu button {
+      flex: 1;
+      padding: 12px;
+      background: #004080;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .menu button:hover {
+      background: #0066cc;
+    }
+    form {
+      display: none;
+      margin-top: 20px;
+    }
+    form.active {
+      display: block;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+.submit-btn {
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .submit-btn:hover {
+      background: #218838;
+    }
+
+
+</style>
+<body>
+    <header>
+    <h1>Bank Management System</h1>
+  </header>
+
+  <div class="container">
+    <h2>Operations</h2>
+    <div class="menu">
+      <button onclick="showForm('create')">Create Account</button>
+      <button onclick="showForm('deposit')">Deposit</button>
+      <button onclick="showForm('withdraw')">Withdraw</button>
+      <button onclick="showForm('balance')">Check Balance</button>
+      <button onclick="showForm('list')">List Accounts</button>
+    </div>
+
+    <!-- Create Account -->
+    <form id="create">
+      <h3>Create Account</h3>
+      <label>Account Number</label>
+      <input type="text" placeholder="Enter Account Number">
+      <label>Name</label>
+      <input type="text" placeholder="Enter Name">
+      <label>Initial Balance</label>
+      <input type="number" placeholder="Enter Amount">
+      <button class="submit-btn">Create</button>
+    </form>
+<!-- Deposit -->
+    <form id="deposit">
+      <h3>Deposit Money</h3>
+      <label>Account Number</label>
+      <input type="text" placeholder="Enter Account Number">
+      <label>Amount</label>
+      <input type="number" placeholder="Enter Deposit Amount">
+      <button class="submit-btn">Deposit</button>
+    </form>
+
+    <!-- Withdraw -->
+    <form id="withdraw">
+      <h3>Withdraw Money</h3>
+      <label>Account Number</label>
+      <input type="text" placeholder="Enter Account Number">
+      <label>Amount</label>
+      <input type="number" placeholder="Enter Withdrawal Amount">
+      <button class="submit-btn">Withdraw</button>
+    </form>
+
+    <!-- Check Balance -->
+    <form id="balance">
+      <h3>Check Balance</h3>
+      <label>Account Number</label>
+      <input type="text" placeholder="Enter Account Number">
+      <button class="submit-btn">Check</button>
+    </form>
+ <!-- List Accounts -->
+    <form id="list">
+      <h3>All Accounts</h3>
+      <button class="submit-btn">Show Accounts</button>
+    </form>
+  </div>
+
+  <script>
+    function showForm(id) {
+      document.querySelectorAll("form").forEach(f => f.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+    }
+  </script>
+
+</body>
+</html>
